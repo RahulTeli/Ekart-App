@@ -1,0 +1,82 @@
+{
+  "seller": [
+    {
+      "Name": "Rahul Teli",
+      "Email": "rahulteli2000@gmail.com",
+      "Password": 1234,
+      "id": 1
+    },
+    {
+      "Name": "Dhaneshwar Bhakat",
+      "Email": "dn@gmail.com",
+      "Password": "456456",
+      "id": 2
+    },
+    {
+      "Name": "Superman",
+      "Email": "super@gmail.com",
+      "Password": "4567",
+      "id": 3
+    },
+    {
+      "Name": "Spiderman",
+      "Email": "spiderman@gmail.com",
+      "Password": "145",
+      "id": 4
+    },
+    {
+      "Name": "Spiderwomen",
+      "Email": "spiderwomen@gmail.com",
+      "Password": "1455",
+      "id": 5
+    },
+    {
+      "Name": "Hulk",
+      "Email": "hulk@gmail.com",
+      "Password": "789",
+      "id": 6
+    },
+    {
+      "Name": "Akash",
+      "Email": "aksah@gmail.com",
+      "Password": "adsf",
+      "id": 7
+    },
+    {
+      "Name": "Akash",
+      "Email": "aksah@gmail.com",
+      "Password": "adsf",
+      "id": 8
+    },
+    {
+      "Name": "Peter Parker",
+      "Email": "perterp@gmail.com",
+      "Password": "123",
+      "id": 9
+    },
+    {
+      "Name": "Tony Stark",
+      "Email": "tony@gmail.com",
+      "Password": "1234",
+      "id": 10
+    },
+    {
+      "Name": "Iron Man",
+      "Email": "iron@gmail.com",
+      "Password": "1234",
+      "id": 11
+    },
+    {
+      "Name": "Captain America",
+      "Email": "cap@gmail.com",
+      "Password": "1234",
+      "id": 12
+    },
+    {
+      "Name": "black widow",
+      "Email": "bw@gmail.com",
+      "Password": "4567",
+      "id": 13
+    }
+  ]
+}

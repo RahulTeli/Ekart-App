@@ -1,0 +1,58 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  
+  .nav h1 {
+    margin: 0;
+  }
+  .nav .nav-search {
+    flex: 1;
+    display: flex;
+    margin-left: 35%;
+    margin-right: 5%;
+    margin-top: 5px;
+  }
+  
+  .nav .nav-search input {
+      flex: 1;
+      height: 39px;
+  }
+  
+  .nav .nav-search button{
+      height: 39px;
+  }
+  
+  .nav ul {
+      display: inline-flex;
+      margin-right: 15px;
+      padding: 0;
+      list-style-type: none;
+  }
+  
+  .nav .menu ul li{
+      padding-left: 20px;
+      font-size: 15px;
+      padding-top: 15px;
+  }
+    
+
+  
+  .suggested-search{
+    position: absolute;
+    top: 40px;
+    z-index: 10;
+    display: list-item !important;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    width: 300px;
+  }
+  .suggested-search li {
+    padding:5px;
+    border: 1px solid #ddd;
+  }
+  .suggested-search li a{
+    cursor: pointer;
+    color: blueviolet;
+  }

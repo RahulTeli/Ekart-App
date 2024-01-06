@@ -1,0 +1,27 @@
+<div class="container bg-secondary-theme">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card mt-5 shadow-effect mb-5">
+                <div class="card-body">
+                    <h4>Seller Sign-up</h4>
+                    <form #sellerSignup='ngForm' (ngSubmit)="sellerFormSubmit(sellerSignup.value)">
+                        <div class="mb-3">
+                            <label for="exampleInput1" class="form-label">Name</label>
+                            <input type="text" class="form-control shadow-effect" id="exampleInput1" name="Name" ngModel>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInput2" class="form-label">Email</label>
+                            <input type="email" class="form-control shadow-effect" id="exampleInputemail2" name="Email" ngModel>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInput2" class="form-label">Password</label>
+                            <input type="password" class="form-control shadow-effect" id="exampleInputPassword3" name="Password" ngModel>
+                        </div>
+                       
+                        <button  class="btn text-white btn-sm btn-theme btn-info mb-2 mt-2 px-4">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
