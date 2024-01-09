@@ -77,6 +77,48 @@
       "Email": "bw@gmail.com",
       "Password": "4567",
       "id": 13
+    },
+    {
+      "Name": "Batman",
+      "Email": "bat@gmail.com",
+      "Password": "142",
+      "id": 14
+    },
+    {
+      "Name": "",
+      "Email": "",
+      "Password": "",
+      "id": 15
     }
+  ],
+  "products": [
+    {
+      "productname": "Nike Shoes",
+      "productprice": "4500",
+      "productcolor": "White",
+      "productcategory": "Shoes",
+      "productimage": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/29a93e9c-0279-47c8-abc3-9f7a2f475c88/air-force-1-07-shoes-0XGfD7.png",
+      "productdescription": "Comfortable, durable and timeless—i\nt's number 1 for a reason. The '80s construction pairs with classic colours for style that tracks whether you're on court or on the go.\n",
+      "id": 1
+    },
+    {
+      "productname": "Boat Watch",
+      "productprice": "12000",
+      "productcolor": "Black",
+      "productcategory": "Accessories",
+      "productimage": "https://www.boat-lifestyle.com/cdn/shop/products/black2_600x.png?v=1654312291",
+      "productdescription": "boAt Wave Connect - Bluetooth Calling Smartwatch with Built in Alexa\n\nRead more at: https://www.boat-lifestyle.com/products/boat-wave-connect-bluetooth-calling-smartwatch",
+      "id": 2
+    },
+    {
+      "productname": "Apple Iphone 15",
+      "productprice": "80000",
+      "productcolor": "White",
+      "productcategory": "Smart Phone",
+      "productimage": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-blue?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692923777972",
+      "productdescription": "The innovative new design features back glass that has color infused throughout the material. A custom dual ion-exchange process for the glass, and an aerospace-grade alumin\num enclosure, help make iPhone 15 incredibly durable.",
+      "id": 3
+    }
+   
   ]
 }

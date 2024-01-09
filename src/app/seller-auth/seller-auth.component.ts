@@ -12,11 +12,29 @@ export class SellerAuthComponent {
   constructor(private service:SellerService){  //creating object 
   }
 
+  sellerlogin:boolean=false;
+  ngOnInit(){
+    this.service.reloadSeller();
+  }
   
-  sellerFormSubmit(formdata:SignupSeller):void{
+  sellerSingupFormSubmit(formdata:SignupSeller):void{
   
    this.service.sellerSignUp(formdata);
    
+  }
+  sellerLoginFormSubmit(formdata:SignupSeller):void{
+
+   this.service.sellerLogin(formdata);
+  }
+
+  openLogin(){
+
+    this.sellerlogin = true;
+
+  }
+
+  openSignup(){
+    this.sellerlogin = false;
   }
 
 }

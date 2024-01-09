@@ -3,3 +3,17 @@ export interface SignupSeller{
     Password:string,
     Email:string
 }
+export interface LoginSeller{
+    Email:string,
+    Password:string
+}
+
+export interface Product{
+    productname:string,
+    productprice:number,
+    productcolor:string,
+    productcategory:string,
+    productimage:string,
+    productdescription:string,
+    id:number
+}

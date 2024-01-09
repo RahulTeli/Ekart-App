@@ -1,10 +1,12 @@
 <div class="container bg-secondary-theme">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center ">
         <div class="col-md-7">
-            <div class="card mt-5 shadow-effect mb-5">
+
+             <!-- ------------------ Signup ---------------- -->
+            <div *ngIf="!sellerlogin" class="card mt-5 shadow-effect mb-5 sellersignupform">
                 <div class="card-body">
-                    <h4>Seller Sign-up</h4>
-                    <form #sellerSignup='ngForm' (ngSubmit)="sellerFormSubmit(sellerSignup.value)">
+                    <h4 class="mb-4 text-theme-primary ">Signup</h4>
+                    <form #sellerSignup='ngForm' (ngSubmit)="sellerSingupFormSubmit(sellerSignup.value)">
                         <div class="mb-3">
                             <label for="exampleInput1" class="form-label">Name</label>
                             <input type="text" class="form-control shadow-effect" id="exampleInput1" name="Name" ngModel>
@@ -18,10 +20,31 @@
                             <input type="password" class="form-control shadow-effect" id="exampleInputPassword3" name="Password" ngModel>
                         </div>
                        
-                        <button  class="btn text-white btn-sm btn-theme btn-info mb-2 mt-2 px-4">Submit</button>
+                        <button type="submit" class="btn text-white btn-sm btn-theme btn-info mb-2 mt-2 px-4">Signup</button>
+                        <p class="fs-6 mt-2 sell-toogle-link" (click)="openLogin();">Already have account ? <span class="text-info">Login</span></p>
                     </form>
                 </div>
             </div>
+
+           <!-- ------------------ Login page --------------------- -->
+           <div *ngIf="sellerlogin" class="card mt-5 shadow-effect mb-5 sellerloginform">
+            <div class="card-body">
+                <h4 class="mb-2 text-theme-primary ">Login</h4>
+                <form #sellerLogin='ngForm' (ngSubmit)="sellerLoginFormSubmit(sellerLogin.value)">
+                    <div class="mb-3">
+                        <label for="exampleInput2" class="form-label">Email</label>
+                        <input type="email" class="form-control shadow-effect" id="exampleInputemail2" name="Email" ngModel>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInput2" class="form-label">Password</label>
+                        <input type="password" class="form-control shadow-effect" id="exampleInputPassword3" name="Password" ngModel>
+                    </div>
+                   
+                    <button  type="submit" class="btn text-white btn-sm btn-theme btn-info mb-2 mt-2 px-4">Login</button>
+                    <p class="fs-6 mt-2 sell-toogle-link" (click)="openSignup();">Don't have account ? <span class="text-info">Signup</span></p>
+                </form>
+            </div>
+        </div>
         </div>
     </div>
 </div>

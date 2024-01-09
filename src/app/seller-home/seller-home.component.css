@@ -1,0 +1,15 @@
+img{
+    width: 120px;
+   height: 120px;
+}
+.container{
+    padding-top: 50px;
+}
+.tt{
+    width:100px;
+}
+.fa-pen,.fa-trash{
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
