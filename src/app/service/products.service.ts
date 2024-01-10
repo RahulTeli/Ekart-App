@@ -22,13 +22,38 @@ export class ProductsService {
       });
   }
 
+    /// show list of products
   showProducts(){
     return this.client.get<Product[]>('http://localhost:3000/products');
   }
 
+    // delete products
   deleteProduct(id: number) {
    return  this.client.delete<Product>(`http://localhost:3000/products/${id}`);
   }
 
+  // get single product values for updating purpose
+  getProduct(id:string){
+    return this.client.get<Product>(`http://localhost:3000/products/${id}`);
+  }
 
+  //update product
+  updateProduct(data:Product){
+    return this.client.put<Product>(`http://localhost:3000/products/${data.id}`,data);
+  }
+
+  //popularProductShow
+  popularProduct(){
+    return this.client.get<Product[]>('http://localhost:3000/products/?_limit=3');
+  }
+
+    //shown product list on home page
+    listProduct(){
+      return this.client.get<Product[]>('http://localhost:3000/products/?_limit=8');
+    }
+
+     //suggestion when searching
+     suggestProduct(query:string){
+      return this.client.get<Product[]>(`http://localhost:3000/products?q=${query}`);
+    }
 }

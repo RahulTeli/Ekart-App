@@ -1,0 +1,14 @@
+.pop{
+    object-fit: contain;
+    height: 600px;
+    width: 100%;
+}
+.carousel-caption{
+    background-color: #00000082;
+    border-radius: 7px;
+}
+.card-img-top{
+    width: 100%;
+    object-fit: contain;
+    height: 200px;
+}

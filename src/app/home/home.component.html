@@ -1,1 +1,42 @@
-<p>home works!</p>
+<div class="container mb-4">
+
+ 
+      <ngb-carousel *ngIf="proudctsImage">
+        <ng-template ngbSlide *ngFor="let item of proudctsImage" >
+          <div class="picsum-img-wrapper">
+            <img class="pop"
+              src="{{item.productimage}}"
+              alt="Random first slide" />
+          </div>
+          <div class="carousel-caption">
+            <h3>{{item.productname}}</h3>
+            <p>{{item.productdescription}}</p>
+          </div>
+        </ng-template>
+       
+      </ngb-carousel>
+  
+      <div class="row  mt-5 " *ngIf="productList">
+        <h1 class="text-center"> Trendy Products </h1>
+
+        <div class="col-md-3" *ngFor="let product of productList">
+
+          <div class="card mt-3">
+            <img src="{{product.productimage}}" class="card-img-top" alt="...">
+        
+            <div class="card-body border-top text-center">
+              <h5 class="card-title ">{{product.productname}}</h5>
+              <p class="card-text ">Price : {{product.productprice}}<br> Color : {{product.productcolor}}</p>
+             
+            </div>
+            <div class="card-body border-top d-flex justify-content-evenly">
+                  <a href="" class="link" >View Details</a>
+                  <a href="" class="link">Add to Cart</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+</div>

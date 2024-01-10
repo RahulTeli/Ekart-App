@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginSeller } from 'src/data-type';
+import { LoginSeller, Product } from 'src/data-type';
+import { ProductsService } from '../service/products.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-constructor(private route:Router){}
+constructor(private route:Router,private serviceproduct:ProductsService){}
 
 menuType:string = 'default';
 sellerName:string = '';
+suggestResult:Product [] | undefined= [];
 
 ngOnInit(){    // checking on which route we are and setting header according to that after login 
   this.route.events.subscribe((response:any)=>{
@@ -32,6 +34,29 @@ ngOnInit(){    // checking on which route we are and setting header according to
   })
 }
 
+ Suggest(query:KeyboardEvent)
+ {
+
+  if(query){
+    const element = query.target as HTMLInputElement;
+
+    if(element.value.length <0){
+      this.suggestResult = undefined;
+    }
+
+    this.serviceproduct.suggestProduct(element.value).subscribe((response)=>{
+        if(response.length >3){
+          response.length = 3;
+        }
+          this.suggestResult = response;
+    })
+  }
+
+ }
+
+ hideSuggest(){
+  this.suggestResult = undefined;
+ }
 
 logout()
 {

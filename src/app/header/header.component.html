@@ -2,11 +2,14 @@
     <h1><a routerLink="" class=" link">E Kart</a> </h1>
     <div *ngIf="menuType==='default'" class="nav-search">
         <div class="form-group">
-            <input type="text" class="form-control shadow-effect" placeholder="Search Products" />
+            <input type="text" (keyup)="Suggest($event)" (blur)="hideSuggest()" class="form-control shadow-effect" placeholder="Search Products" />
         </div>
         <div class="form-group">
             <button class="btn btn-info btn-sm text-white shadow-effect ">Search</button>
         </div>
+       <ul class="suggested-search" *ngIf="suggestResult">
+        <li *ngFor="let item of suggestResult"><a class="link">{{item.productname}}</a></li>
+       </ul>
        
     </div>
 

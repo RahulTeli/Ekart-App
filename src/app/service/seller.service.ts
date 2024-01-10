@@ -32,6 +32,16 @@ export class SellerService {
           });
           this.isSellerLoggedIn.next(true); //setting auth guard value to true
           localStorage.setItem('seller', JSON.stringify(resp.body));
+
+          setTimeout(() => {                   // setting time for session
+            localStorage.removeItem('seller');
+            this.toast.warning( 'Session Timeout', 'Timeout', {
+              progressBar: true,
+              closeButton: true,
+            });
+            this.route.navigate(['']); //navigating to home page
+          }, 1000 * 60 * 20);
+
           this.route.navigate(['seller-home']); //navigating to seller home page
         },
         (error: SignupSeller) => {
@@ -64,6 +74,18 @@ export class SellerService {
             progressBar: true,
             closeButton: true,
           });
+
+          setTimeout(() => {                        // setting time for session
+            localStorage.removeItem('seller');
+            this.toast.warning( 'Session Timeout', 'Timeout', {
+              progressBar: true,
+              closeButton: true,
+            });
+
+            this.route.navigate(['']); //navigating to home page
+
+          }, 1000 * 60 * 20);
+
           this.route.navigate(['seller-home']); //navigating to seller home page
         }
         else{

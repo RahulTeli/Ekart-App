@@ -97,7 +97,7 @@
       "productprice": "4500",
       "productcolor": "White",
       "productcategory": "Shoes",
-      "productimage": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/29a93e9c-0279-47c8-abc3-9f7a2f475c88/air-force-1-07-shoes-0XGfD7.png",
+      "productimage": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fwp-content%2Fblogs.dir%2F6%2Ffiles%2F2023%2F03%2Fbillie-eilish-nike-air-force-1-low-white-dz3674-100-release-info-1.jpeg?cbr=1&q=90",
       "productdescription": "Comfortable, durable and timeless—i\nt's number 1 for a reason. The '80s construction pairs with classic colours for style that tracks whether you're on court or on the go.\n",
       "id": 1
     },
@@ -118,7 +118,24 @@
       "productimage": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-blue?wid=2560&hei=1440&fmt=p-jpg&qlt=80&.v=1692923777972",
       "productdescription": "The innovative new design features back glass that has color infused throughout the material. A custom dual ion-exchange process for the glass, and an aerospace-grade alumin\num enclosure, help make iPhone 15 incredibly durable.",
       "id": 3
+    },
+    {
+      "productname": "Sherwani",
+      "productprice": "6000",
+      "productcolor": "Chrome",
+      "productcategory": "Men Fashion",
+      "productimage": "https://5.imimg.com/data5/BK/II/PS/ANDROID-101347293/product-jpeg-500x500.jpg",
+      "productdescription": "The new Fashion is here , brand new sherwani",
+      "id": 4
+    },
+    {
+      "productname": "Kurti",
+      "productprice": "1200",
+      "productcolor": "Red",
+      "productcategory": "Women Fashion",
+      "productimage": "https://assets.ajio.com/medias/sys_master/root/20230628/aaiS/649bba93a9b42d15c908430a/soch-red-straight-embroidered-straight-kurta.jpg",
+      "productdescription": "Brand new Kurti like kaju katli",
+      "id": 5
     }
-   
   ]
 }

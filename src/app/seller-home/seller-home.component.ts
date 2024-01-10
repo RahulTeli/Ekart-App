@@ -26,8 +26,7 @@ export class SellerHomeComponent {
     this.productservice.showProducts().subscribe((response)=>{
      
       if(response){
-        this.productList = response;
-        console.warn(this.productList);
+        this.productList = response;      
       }
       if( response.length==0){
           this.toast.error("No Data Found !","Message");
@@ -53,7 +52,6 @@ export class SellerHomeComponent {
         // ------------------ calling method after confirmation -------------
 
         this.productservice.deleteProduct(id).subscribe((response)=>{
-          console.log(response);
           this.toast.success("Product Deleted Successfully","Delete")
           this.List();
         })
