@@ -1,0 +1,25 @@
+<div class="container" *ngIf="proudctList">
+    <div class="row p-4 border-top " *ngFor="let item of proudctList">
+        <div class="col-sm-5 col ">
+           <a routerLink="/product/{{item.id}}"><img src="{{item.productimage}}" alt="productimage"></a>
+        </div>
+        <div class="col-sm-7 col p-3 ">
+            <h3><a routerLink="/product/{{item.id}}" class="link"> Name : {{item.productname}}</a> </h3>
+            <h4>Price : {{item.productprice}} rs</h4>
+            <h4>Color : {{item.productcolor}}</h4>
+            <h4>Category : {{item.productcategory}}</h4>
+            <h4>Description : {{item.productdescription}}</h4>
+        </div>
+
+    </div>
+    
+</div>
+<div class="container" *ngIf="!proudctList">
+    <div class="row p-4 border-top ">
+      
+            <div class="col-md-12">
+                <h1>No Product Found !</h1>
+            </div>
+    </div>
+    
+</div>

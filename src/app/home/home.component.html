@@ -4,7 +4,7 @@
       <ngb-carousel *ngIf="proudctsImage">
         <ng-template ngbSlide *ngFor="let item of proudctsImage" >
           <div class="picsum-img-wrapper">
-            <img class="pop"
+            <img routerLink="/product/{{item.id}}" class="pop"
               src="{{item.productimage}}"
               alt="Random first slide" />
           </div>
@@ -15,13 +15,15 @@
         </ng-template>
        
       </ngb-carousel>
+
+      <!-- ----------------------------- Trendy product --------------------- -->
   
       <div class="row  mt-5 " *ngIf="productList">
         <h1 class="text-center"> Trendy Products </h1>
 
         <div class="col-md-3" *ngFor="let product of productList">
 
-          <div class="card mt-3">
+          <div class="card mt-3 shadow-effect">
             <img src="{{product.productimage}}" class="card-img-top" alt="...">
         
             <div class="card-body border-top text-center">
@@ -30,7 +32,7 @@
              
             </div>
             <div class="card-body border-top d-flex justify-content-evenly">
-                  <a href="" class="link" >View Details</a>
+                  <a routerLink="/product/{{product.id}}" class="link" >View Details</a>
                   <a href="" class="link">Add to Cart</a>
             </div>
           </div>

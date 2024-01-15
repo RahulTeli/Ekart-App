@@ -7,6 +7,15 @@ export interface LoginSeller{
     Email:string,
     Password:string
 }
+export interface SignupUser{
+    Name:string,
+    Password:string,
+    Email:string
+}
+export interface LoginUser{
+    Email:string,
+    Password:string
+}
 
 export interface Product{
     productname:string,
@@ -15,5 +24,6 @@ export interface Product{
     productcategory:string,
     productimage:string,
     productdescription:string,
-    id:number
+    id:number,
+    quantity:number
 }

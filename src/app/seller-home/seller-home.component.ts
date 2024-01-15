@@ -3,6 +3,8 @@ import { ProductsService } from '../service/products.service';
 import { Product } from 'src/data-type';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2'
+import { SellerService } from '../service/seller.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seller-home',
@@ -11,7 +13,7 @@ import Swal from 'sweetalert2'
 })
 export class SellerHomeComponent {
 
-  constructor(private productservice:ProductsService,private toast :ToastrService){}
+  constructor(private productservice:ProductsService, private route:Router,private toast :ToastrService,private sellerservice:SellerService){}
   
   //productList :undefined | Product[];
   //or 
@@ -20,6 +22,7 @@ export class SellerHomeComponent {
 
   ngOnInit(){
     this.List();
+    
   }
 
   List(){
@@ -33,10 +36,7 @@ export class SellerHomeComponent {
       } 
     })
   }
-  edProduct(id:number)
-  {
-
-  }
+ 
   delProduct(id:number){
     
     Swal.fire({                               // confirm dialog box 

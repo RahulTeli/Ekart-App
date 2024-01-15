@@ -56,4 +56,5 @@ export class ProductsService {
      suggestProduct(query:string){
       return this.client.get<Product[]>(`http://localhost:3000/products?q=${query}`);
     }
+
 }

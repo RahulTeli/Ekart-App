@@ -13,7 +13,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SearchComponent } from './search/search.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { UserAuthComponent } from './user-auth/user-auth.component'
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     SellerAuthComponent,
     SellerHomeComponent,
     SellerAddProductComponent,
-    SellerUpdateProductComponent
+    SellerUpdateProductComponent,
+    SearchComponent,
+    ProductdetailsComponent,
+    UserAuthComponent
   ],
   imports: [
     BrowserModule,

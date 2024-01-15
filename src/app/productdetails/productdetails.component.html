@@ -1,0 +1,30 @@
+<div class="container " *ngIf="productList">
+    <div class="row">
+        <div class="col-md-6 mt-4">
+                <img src="{{productList.productimage}}" class="productimage img-fluid">
+        </div>
+        <div class="col-md-6  p-5 mt-2">
+
+            <div class="details">
+                <h3>{{productList.productname}}</h3>
+                <div>
+                    Color : <h5 [style.backgroundColor]="productList.productcolor" class="colorclass"></h5>
+                </div>
+                <h6>Category : {{productList.productcategory}}</h6>
+                <h6>Description : {{productList.productdescription}}</h6>
+                
+                <div class="buttons">
+                    <button class="btn btn-sm bg-dark text-white">Add to Cart</button>
+                    <button type="button" class="btn btn-sm btn-light">Buy Now</button>
+                </div>
+                
+                <div class="quantity mt-4">
+                    <button class="incrementbtn" (click)="handleQuant('min')" >-</button>
+                    <input type="text" readonly class="quantinput text-center fs-6" value="{{quantity}}">
+                    <button class="decrementbtn" (click)="handleQuant('add')" >+</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

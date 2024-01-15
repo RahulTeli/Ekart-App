@@ -1,0 +1,83 @@
+<div class="container bg-secondary-theme">
+    <div class="row justify-content-center ">
+        <div class="col-md-7">
+
+            <!-- ------------------ Signup ---------------- -->
+            <div *ngIf="!userlogin" class="card mt-5 shadow-effect mb-5 usersignupform">
+                <div class="card-body">
+                    <h4 class="mb-4 text-theme-primary ">Signup</h4>
+                    <form #userSignup='ngForm' (ngSubmit)="userSingupFormSubmit(userSignup.value)">
+                        <div class="mb-3">
+                            <label for="exampleInput1" class="form-label">Name</label>
+                            <input type="text" class="form-control shadow-effect" id="exampleInput1" name="Name"
+                                #Name="ngModel" required ngModel>
+                            <div *ngIf="Name.errors && Name.touched">
+                                <small class="text-danger" *ngIf="Name.errors['required']">Name field is
+                                    required</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInput2" class="form-label">Email</label>
+                            <input type="email" class="form-control shadow-effect" id="exampleInputemail2" name="Email"
+                                ngModel email #Email="ngModel" required>
+                                <div *ngIf="Email.errors && Email.touched">
+                                    <small class="text-danger" *ngIf="Email.errors['required'] ">Email field is
+                                        required</small>
+                                    <small class="text-danger" *ngIf="Email.errors['email'] ">Invalid email type</small>
+                                </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInput2" class="form-label">Password</label>
+                            <input type="password" class="form-control shadow-effect" id="exampleInputPassword3"
+                                name="Password" ngModel maxlength="12" minlength="2" #Password="ngModel" required>
+                                <div *ngIf="Password.errors && Password.touched">
+                                    <small class="text-danger" *ngIf="Password.errors['required']">Password field is
+                                        required</small>
+                                    <small class="text-danger" *ngIf="Password.errors['minlength']">Password must have
+                                        minimum 2 length</small>
+                                </div> 
+                        </div>
+
+                        <button type="submit" [disabled]="userSignup.invalid"
+                            class="btn text-white btn-sm btn-theme btn-info mb-2 mt-2 px-4">Signup</button>
+                        <p class="fs-6 mt-2 user-toogle-link" (click)="openLogin();">Already have account ? <span
+                                class="text-warning">Login</span></p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ------------------ Login page --------------------- -->
+            <div *ngIf="userlogin" class="card mt-5 shadow-effect mb-5 userloginform">
+                <div class="card-body">
+                    <h4 class="mb-2 text-theme-primary ">Login</h4>
+                    <form #userLogin='ngForm' (ngSubmit)="userLoginFormSubmit(userLogin.value)">
+                        <div class="mb-3">
+                            <label for="exampleInput2" class="form-label">Email</label>
+                            <input type="email" class="form-control shadow-effect" id="exampleInputemail2" name="Email"
+                                ngModel #Email="ngModel" email required>
+                                <div *ngIf="Email.errors && Email.touched">
+                                    <small class="text-danger" *ngIf="Email.errors['required']">Email field is
+                                        required</small>
+                                    <small class="text-danger" *ngIf="Email.errors['email']">Email is not valid</small>
+                                </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInput2" class="form-label">Password</label>
+                            <input type="password" class="form-control shadow-effect" id="exampleInputPassword3"
+                                name="Password" ngModel #Password="ngModel" required minlength="2" maxlength="12">
+                            <div *ngIf="Password.errors && Password.touched">
+                            <small class="text-danger" *ngIf="Password.errors['required']">Password is required</small>
+                            <small class="text-danger" *ngIf="Password.errors['minlength']">Password must have minimum 2 length</small>
+                            </div> 
+                        </div>
+
+                        <button type="submit"   [disabled]="userLogin.invalid"
+                            class="btn text-white btn-sm btn-theme btn-info mb-2 mt-2 px-4">Login</button>
+                        <p class="fs-6 mt-2 user-toogle-link" (click)="openSignup();">Don't have account ? <span
+                                class="text-warning">Signup</span></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

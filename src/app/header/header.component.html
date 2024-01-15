@@ -1,14 +1,14 @@
 <nav class="nav shadow-effect navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top">
     <h1><a routerLink="" class=" link">E Kart</a> </h1>
-    <div *ngIf="menuType==='default'" class="nav-search">
+    <div *ngIf="menuType==='default' || 'user' " class="nav-search">
         <div class="form-group">
-            <input type="text" (keyup)="Suggest($event)" (blur)="hideSuggest()" class="form-control shadow-effect" placeholder="Search Products" />
+            <input type="text" #searchInput (keyup)="Suggest($event)" (blur)="hideSuggest()" class="form-control shadow-effect" placeholder="Search Products" />
         </div>
-        <div class="form-group">
-            <button class="btn btn-info btn-sm text-white shadow-effect ">Search</button>
+        <div class="form-group"> 
+            <button (click)="searchSubmit(searchInput.value)" class="btn btn-info btn-sm text-white shadow-effect ">Search</button>
         </div>
        <ul class="suggested-search" *ngIf="suggestResult">
-        <li *ngFor="let item of suggestResult"><a class="link">{{item.productname}}</a></li>
+        <li *ngFor="let item of suggestResult" (mousedown)="suggestSearch(item.productname)"><a  class="link">{{item.productname}}</a></li>
        </ul>
        
     </div>
@@ -16,15 +16,22 @@
     <div [ngSwitch]="menuType" class="menu">
         <ul *ngSwitchCase="'default'">
             <li><a routerLink="" class="link">Home</a></li>
-            <li><a routerLink="seller-auth" class="link">Seller</a></li>
-            <li><a  class="link">Login</a></li>
+            <li><a routerLink="/seller-auth" class="link">Seller</a></li>
+            <li><a  routerLink="/user-auth" class="link">Login/Signup</a></li>
             <li><a class="link">Cart</a></li>
         </ul>
         <ul *ngSwitchCase="'seller'">
             <li><a  class="link"  routerLink="seller-home">Product List</a></li>
             <li><a  class="link" routerLink="seller-add-product">Add Product</a></li>
-            <li><a (click)="logout()" class="link text-danger">Logout</a></li>
-            <li><a  class="link text-info ">{{sellerName | titlecase}}</a></li>
+            <li><a (click)="sellerlogout()" class="link text-danger">Logout</a></li>
+            <li><a  class="link text-info ">{{Name | titlecase}}</a></li>
+        </ul>
+        <ul *ngSwitchCase="'user'">
+            <li><a  class="link"  routerLink="">fswet</a></li>
+            <li><a  class="link" routerLink="">jkhsaddfjkhjsad</a></li>
+            <li><a  class="link" routerLink="">Cart(0)</a></li>
+            <li><a (click)="userlogout()" class="link text-danger">Logout</a></li>
+            <li><a  class="link text-info ">{{userName | titlecase}}</a></li>
         </ul>
     </div>
     

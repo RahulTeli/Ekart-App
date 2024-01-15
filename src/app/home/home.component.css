@@ -2,6 +2,7 @@
     object-fit: contain;
     height: 600px;
     width: 100%;
+    cursor: pointer;
 }
 .carousel-caption{
     background-color: #00000082;

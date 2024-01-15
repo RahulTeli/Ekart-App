@@ -28,7 +28,7 @@ export class SellerUpdateProductComponent {
     updateProductSubmit(formdata:Product){
       if(this.productData){
         formdata.id=this.productData.id;
-      }
+      }     
 
       Swal.fire({                   //confirmation dialog
         title: "Are you sure?",
@@ -37,7 +37,7 @@ export class SellerUpdateProductComponent {
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonText: "Yes, update it!"
       }).then((result) => {
         if (result.isConfirmed) {
 

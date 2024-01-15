@@ -11,8 +11,10 @@ export class SellerAuthComponent {
 
   constructor(private service:SellerService){  //creating object 
   }
+  
 
   sellerlogin:boolean=false;
+
   ngOnInit(){
     this.service.reloadSeller();
   }

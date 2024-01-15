@@ -26,21 +26,12 @@ export class SellerService {
       })
       .subscribe(
         (resp) => {
-          this.toast.success('Seller Added', 'Success', {
+          this.toast.success('Seller Registered', 'Success', {
             progressBar: true,
             closeButton: true,
           });
           this.isSellerLoggedIn.next(true); //setting auth guard value to true
           localStorage.setItem('seller', JSON.stringify(resp.body));
-
-          setTimeout(() => {                   // setting time for session
-            localStorage.removeItem('seller');
-            this.toast.warning( 'Session Timeout', 'Timeout', {
-              progressBar: true,
-              closeButton: true,
-            });
-            this.route.navigate(['']); //navigating to home page
-          }, 1000 * 60 * 20);
 
           this.route.navigate(['seller-home']); //navigating to seller home page
         },
@@ -74,18 +65,6 @@ export class SellerService {
             progressBar: true,
             closeButton: true,
           });
-
-          setTimeout(() => {                        // setting time for session
-            localStorage.removeItem('seller');
-            this.toast.warning( 'Session Timeout', 'Timeout', {
-              progressBar: true,
-              closeButton: true,
-            });
-
-            this.route.navigate(['']); //navigating to home page
-
-          }, 1000 * 60 * 20);
-
           this.route.navigate(['seller-home']); //navigating to seller home page
         }
         else{
@@ -93,4 +72,8 @@ export class SellerService {
         }
       });
   }
+
+
+  
+
 }

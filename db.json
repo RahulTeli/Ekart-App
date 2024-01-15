@@ -89,6 +89,42 @@
       "Email": "",
       "Password": "",
       "id": 15
+    },
+    {
+      "Name": "tonu",
+      "Email": "t@gmail.com",
+      "Password": "123",
+      "id": 16
+    },
+    {
+      "Name": "Rahul Teli",
+      "Email": "rahulteli2005@gmail.com",
+      "Password": "123",
+      "id": 17
+    },
+    {
+      "Name": "shridhar",
+      "Email": "shri@gmail.com",
+      "Password": "147",
+      "id": 18
+    },
+    {
+      "Name": "raghu",
+      "Email": "raghu@gmail.com",
+      "Password": "123",
+      "id": 19
+    },
+    {
+      "Name": "sakshi",
+      "Email": "sak@gmail.com",
+      "Password": "123",
+      "id": 20
+    },
+    {
+      "Name": "Rahul Teli",
+      "Email": "rahulteli2005@gmail.com",
+      "Password": "12",
+      "id": 21
     }
   ],
   "products": [
@@ -122,7 +158,7 @@
     {
       "productname": "Sherwani",
       "productprice": "6000",
-      "productcolor": "Chrome",
+      "productcolor": "yellow",
       "productcategory": "Men Fashion",
       "productimage": "https://5.imimg.com/data5/BK/II/PS/ANDROID-101347293/product-jpeg-500x500.jpg",
       "productdescription": "The new Fashion is here , brand new sherwani",
@@ -136,6 +172,80 @@
       "productimage": "https://assets.ajio.com/medias/sys_master/root/20230628/aaiS/649bba93a9b42d15c908430a/soch-red-straight-embroidered-straight-kurta.jpg",
       "productdescription": "Brand new Kurti like kaju katli",
       "id": 5
+    }
+  ],
+  "users": [
+    {
+      "Name": "Rahul Raju Teli ",
+      "Email": "rahulteli2005@gmail.com",
+      "Password": "1234",
+      "id": 1
+    },
+    {
+      "Name": "Dhaneshwar Bhakat",
+      "Email": "dn@gmail.com",
+      "Password": "789",
+      "id": 2
+    },
+    {
+      "Name": "Akash",
+      "Email": "aksah@gmail.com",
+      "Password": "785",
+      "id": 3
+    },
+    {
+      "Name": "Rahul Teli",
+      "Email": "aksah@gmail.com",
+      "Password": "8789",
+      "id": 4
+    },
+    {
+      "Name": "Superman",
+      "Email": "super@gmail.com",
+      "Password": "789",
+      "id": 5
+    },
+    {
+      "Name": "Tanmay",
+      "Email": "tan@gmail.com",
+      "Password": "123",
+      "id": 6
+    },
+    {
+      "Name": "Tanmay",
+      "Email": "tan@gmail.com",
+      "Password": "1234",
+      "id": 7
+    },
+    {
+      "Name": "NIkita sonni",
+      "Email": "nik@gmail.com",
+      "Password": "123",
+      "id": 8
+    },
+    {
+      "Name": "golu",
+      "Email": "g@gmail.com",
+      "Password": "789",
+      "id": 9
+    },
+    {
+      "Name": "molu",
+      "Email": "m@gmail.com",
+      "Password": "123",
+      "id": 10
+    },
+    {
+      "Name": "Pratik",
+      "Email": "pr@gmail.com",
+      "Password": "123",
+      "id": 11
+    },
+    {
+      "Name": "Superman",
+      "Email": "super@gmail.com",
+      "Password": "1234",
+      "id": 12
     }
   ]
 }
