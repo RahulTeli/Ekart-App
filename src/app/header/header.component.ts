@@ -15,6 +15,7 @@ constructor(private route:Router,private servicesearch:SearchService,private ser
 menuType:string = 'default';
 Name:string|undefined
 userName:string|undefined;
+cartValue:number =0;
 
 suggestResult:Product [] | undefined= [];
 
@@ -27,9 +28,8 @@ ngOnInit(){    // checking on which route we are and setting header according to
         if(localStorage.getItem('seller')){
             let data = localStorage.getItem('seller');
             let sellerdata = data && JSON.parse(data)[0];
-            console.log(sellerdata);
             this.Name = sellerdata.Name;
-            console.log(this.Name)
+
         }
       
       }
@@ -39,7 +39,6 @@ ngOnInit(){    // checking on which route we are and setting header according to
         if(localStorage.getItem('user')){
           let data = localStorage.getItem('user');
           let userdata = data && JSON.parse(data)[0];
-          console.log(userdata);
           this.userName = userdata.Name;
         }
 
@@ -50,6 +49,19 @@ ngOnInit(){    // checking on which route we are and setting header according to
     }
    
   })
+
+
+  let cartData = localStorage.getItem('localCart'); 
+  if(cartData){
+    this.cartValue = JSON.parse(cartData).length;
+  }
+                                                             //subscribing event emitter and getting data from event emitter
+    this.serviceproduct.cartdata.subscribe((response)=>{
+      this.cartValue = response.length;
+    })
+
+  
+
 }
 
  Suggest(query:KeyboardEvent)
@@ -86,7 +98,6 @@ ngOnInit(){    // checking on which route we are and setting header according to
  }
 
  suggestSearch(query:string){
-  debugger
   this.servicesearch.searchmeth(query);
  }
 

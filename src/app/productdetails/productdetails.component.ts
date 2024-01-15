@@ -17,13 +17,10 @@ export class ProductdetailsComponent {
 
       ngOnInit(){
        let id =  this.activeroute.snapshot.paramMap.get('productid')
-       console.log(id);
 
        id && this.serviceproduct.getProduct(id).subscribe((response)=>{
-        console.log(response);
         if(response){
             this.productList = response;
-            console.log(this.productList);
         }
         else{
           this.productList = undefined
@@ -40,5 +37,18 @@ export class ProductdetailsComponent {
           if(this.quantity>1 && val=='min'){
               this.quantity -=1;
           }
+      }
+
+      AddtoCart(){
+
+        if(this.productList){
+
+          this.productList.quantity = this.quantity;
+          if(!localStorage.getItem('user')){
+            this.serviceproduct.LocalAddtoCart(this.productList);
+          }
+
+        }
+
       }
 }

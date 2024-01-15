@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { TagContentType } from '@angular/compiler';
@@ -55,6 +55,23 @@ export class ProductsService {
      //suggestion when searching
      suggestProduct(query:string){
       return this.client.get<Product[]>(`http://localhost:3000/products?q=${query}`);
+    }
+
+    // adding cart data to local storage if user is not login and showing cart number 
+    cartdata = new EventEmitter<Product[] | []>();  // creating event emitter object
+    LocalAddtoCart(data:Product){
+      let cartData =[];
+      let localCart = localStorage.getItem('localCart');
+      if(!localCart){
+        localStorage.setItem('localCart',JSON.stringify([data]));
+        
+      }
+      else{
+        cartData = JSON.parse(localCart);
+        cartData.push(data);
+        localStorage.setItem('localCart',JSON.stringify(cartData));
+        this.cartdata.emit(cartData);  //sending event emitter object with data
+      }
     }
 
 }
