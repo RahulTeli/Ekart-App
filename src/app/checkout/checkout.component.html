@@ -1,1 +1,73 @@
-<p>checkout works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <div class="card mt-5 shadow-effect mb-5 sellerloginform">
+                <div class="card-body">
+                    <h4 class="mb-2 text-theme-primary ">Details</h4>
+                    <form #checkoutpage='ngForm' (ngSubmit)="checkoutsubmit(checkoutpage.value)">
+
+                        <div class="mb-3">
+                            <label for="exampleInputemail2" class="form-label">Email</label>
+                            <input type="email" class="form-control shadow-effect" required email #Email="ngModel"
+                                id="exampleInputemail2" name="Email" ngModel="{{email}}">
+                            <div *ngIf="Email.errors && Email.touched">
+                                <small class="text-danger" *ngIf="Email.errors['required']">Email field is
+                                    required</small>
+                                <small class="text-danger" *ngIf="Email.errors['email']">Email is not valid</small>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInput2" class="form-label">Name</label>
+                            <input type="text" class="form-control shadow-effect" required #Name="ngModel"
+                                id="exampleInput2" name="Name" ngModel="{{name}}">
+                            <div *ngIf="Name.errors && Name.touched">
+                                <small class="text-danger" *ngIf="Name.errors['required']">Name field is
+                                    required</small>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInput3" class="form-label">Mobile No.</label>
+                            <input type="text" class="form-control shadow-effect" required #Mobile="ngModel"
+                                id="exampleInput3" name="Mobile" ngModel maxlength="10">
+                            <div *ngIf="Mobile.errors && Mobile.touched">
+                                <small class="text-danger" *ngIf="Mobile.errors['required']">mobile field is
+                                    required</small>
+                                
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInput2" class="form-label">Shipping Address</label>
+                            <textarea rows="6" class="form-control shadow-effect" required #Address="ngModel"
+                                id="exampleInput1" name="Address" ngModel></textarea>
+                            <div *ngIf="Address.errors && Address.touched">
+                                <small class="text-danger" *ngIf="Address.errors['required']">Address field is
+                                    required</small>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5 class="mb-3"> Choose Payment Method</h5>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Payment" id="inlineRadio1"
+                                    value="COD" ngModel required>
+                                <label class="form-check-label" for="inlineRadio1">Cash On Delivery</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Payment" id="inlineRadio2"
+                                    value="UPI" ngModel required>
+                                <label class="form-check-label" for="inlineRadio2">BHIM/UPI</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" [disabled]="checkoutpage.invalid"
+                            class="btn  btn-sm btn-primary mb-2 mt-2 px-4">ORDER NOW</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { TagContentType } from '@angular/compiler';
-import { Cart, Product } from 'src/data-type';
+import { Cart, Order, Product } from 'src/data-type';
 @Injectable({
   providedIn: 'root',
 })
@@ -114,10 +114,16 @@ export class ProductsService {
 
     }
 
+    // getting cart summary for summary details 
     GetCartSummary(){
       let user  = localStorage.getItem('user');
       let userid = user && JSON.parse(user)[0].id;
       return this.client.get<Cart[]>('http://localhost:3000/cart?userid='+userid);
+    }
+
+    //adding order data to db
+    OrderNow(orderdata:Order){
+      return this.client.post<Order>('http://localhost:3000/order',orderdata);
     }
 
 }

@@ -49,3 +49,13 @@ export interface Summary{
     delievery:number,
     tax:number
 }
+
+export interface Order{
+    name:string,
+    email:string,
+    address:string,
+    mobille:number,
+    payment:string,
+    amount:number,
+    userid:number
+}

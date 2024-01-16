@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../service/products.service';
 import { Cart, Summary } from 'src/data-type';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cartpage',
@@ -8,7 +9,7 @@ import { Cart, Summary } from 'src/data-type';
   styleUrls: ['./cartpage.component.css']
 })
 export class CartpageComponent {
-constructor(private serviceproduct:ProductsService){}
+constructor(private serviceproduct:ProductsService,private route:Router){}
 cartDetails:Cart[]|undefined;
 summary :Summary = {
   price:0,
@@ -30,10 +31,10 @@ ngOnInit(){
           console.log(price);
       });
       this.summary.price = price;
-      this.summary.discount = price/10;
-      this.summary.tax=price/1000;
+      this.summary.discount = price/1000;
+      this.summary.tax=price/100;
       this.summary.delievery=100;
-      this.summary.total = this.summary.price+this.summary.delievery+this.summary.discount-this.summary.tax
+      this.summary.total = this.summary.price+this.summary.delievery-this.summary.discount+this.summary.tax
     
     
     } 
@@ -46,5 +47,9 @@ ngOnInit(){
 
 }
 
+
+checkout(){
+this.route.navigate(['/checkout'])
+}
 
 }
