@@ -61,13 +61,13 @@ export class ProductsService {
     cartdata = new EventEmitter<Product[] | []>();  // creating event emitter object
     LocalAddtoCart(data:Product){
       let cartData =[];
-      let localCart = localStorage.getItem('localCart');
-      if(!localCart){
+      let Cart = localStorage.getItem('localCart');
+      if(!Cart){
         localStorage.setItem('localCart',JSON.stringify([data]));
         
       }
       else{
-        cartData = JSON.parse(localCart);
+        cartData = JSON.parse(Cart);
         cartData.push(data);
         localStorage.setItem('localCart',JSON.stringify(cartData));
         this.cartdata.emit(cartData);  //sending event emitter object with data
