@@ -26,4 +26,26 @@ export interface Product{
     productdescription:string,
     id:number,
     quantity:number
+    productid:undefined|number
+}
+
+export interface Cart{
+    productname:string,
+    productprice:number,
+    productcolor:string,
+    productcategory:string,
+    productimage:string,
+    productdescription:string,
+    id:number | undefined,
+    quantity:number,
+    productid :number,
+    userid:number
+}
+
+export interface Summary{
+    price:number,
+    total:number,
+    discount:number,
+    delievery:number,
+    tax:number
 }

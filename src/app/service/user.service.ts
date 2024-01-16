@@ -34,34 +34,8 @@ export class UserService {
   // ------------- method for user login-----------------
 
   userLogin(data: LoginUser) {
-    this.client.get(
-      `http://localhost:3000/users?Email=${data.Email}&Password=${data.Password}`,
-      { observe: 'response' }
-    ).subscribe((result:any)=>{
-
-      if(result && result.body && result.body.length){
-
-        this.toast.success('Login Succesfully', 'Success', {
-          progressBar: true,
-          closeButton: true,
-        });
-
-        localStorage.setItem('user',JSON.stringify(result.body));
-
-        this.route.navigate(['']);
-      }
-      else{
-        this.toast.error('Invalid Credentials', 'Warning', {
-          progressBar: true,
-          closeButton: true,
-        });
-      }
-
-    })
-
-
-
-
+  
+    return this.client.get(`http://localhost:3000/users?Email=${data.Email}&Password=${data.Password}`);
   }
 
   // method for user reload so it can't access signup page after login

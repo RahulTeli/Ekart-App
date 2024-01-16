@@ -14,7 +14,8 @@
                 <h6>Description : {{productList.productdescription}}</h6>
                 
                 <div class="buttons">
-                    <button class="btn btn-sm bg-dark text-white" (click)="AddtoCart();">Add to Cart</button>
+                    <button class="btn btn-sm btn-danger" *ngIf="removecart" (click)="RemovetoCart(productList.id)">Remove to cart</button>
+                    <button class="btn btn-sm bg-dark text-white" (click)="AddtoCart();" *ngIf="!removecart">Add to Cart</button>
                     <button type="button" class="btn btn-sm btn-light">Buy Now</button>
                 </div>
                 

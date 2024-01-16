@@ -2,7 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { TagContentType } from '@angular/compiler';
-import { Product } from 'src/data-type';
+import { Cart, Product } from 'src/data-type';
 @Injectable({
   providedIn: 'root',
 })
@@ -64,7 +64,9 @@ export class ProductsService {
       let Cart = localStorage.getItem('localCart');
       if(!Cart){
         localStorage.setItem('localCart',JSON.stringify([data]));
-        
+        Cart = localStorage.getItem('localCart');
+        cartData = Cart && JSON.parse(Cart);
+        this.cartdata.emit(cartData);  //sending event emitter object with data
       }
       else{
         cartData = JSON.parse(Cart);
@@ -72,6 +74,50 @@ export class ProductsService {
         localStorage.setItem('localCart',JSON.stringify(cartData));
         this.cartdata.emit(cartData);  //sending event emitter object with data
       }
+    }
+
+
+    // remove item from cart before login
+    RemoveItemFromCart(productid:number){
+  
+      let CartData = localStorage.getItem('localCart');
+      if(CartData){
+        let items:Product[] =  JSON.parse(CartData);
+         items = items.filter((item:Product)=> productid !== item.id); 
+         localStorage.setItem('localCart',JSON.stringify(items));
+         this.cartdata.emit(items);  //sending event emitter object with data
+        }
+      
+
+    }
+
+    //add to cart functionality after user login
+    AddtoCartAfterLogin(Data:Cart){
+      return this.client.post('http://localhost:3000/cart',Data);
+    }
+
+    // get cart list after login
+    GetCartListAfterLogin(userId:number){
+       this.client.get<Product[]>('http://localhost:3000/cart?userid='+userId,{observe:'response'}).subscribe((result)=>{
+       if(result && result.body){
+        this.cartdata.emit(result.body);
+       }
+       
+       })
+
+    }
+
+    //remove cart from database after login
+    RemoveItemFromCartAfterLogin(pid:number){
+
+      return  this.client.delete<Product>(`http://localhost:3000/cart/${pid}`);
+
+    }
+
+    GetCartSummary(){
+      let user  = localStorage.getItem('user');
+      let userid = user && JSON.parse(user)[0].id;
+      return this.client.get<Cart[]>('http://localhost:3000/cart?userid='+userid);
     }
 
 }

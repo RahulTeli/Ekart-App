@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row pt-5" *ngIf="cartDetails">
+        <div class="col-md-8">
+            <div class="table-responsive" *ngIf="cartDetails">
+                <table class="table" >
+                    <thead>
+                      <tr class="text-center">
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider" *ngFor="let item of cartDetails">
+                      <tr>
+                        <td><img src="{{item.productimage}}" alt="productimage"></td>
+                        <td class="fs-6">{{item.productname}}</td>
+                        <td class="fs-6">{{item.productprice}}</td>
+                        <td class="fs-6">{{item.quantity}}</td>
+                        <td class="fs-6"><button class="btn btn-sm btn-danger">Remove</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          
+        </div>
+        <div class="col-md-4">
+                <div class="summary fa-border" *ngIf="summary">
+                    <h3>Summary</h3>
+                  <ul>
+                    <li><span>Price</span><span>{{summary.price}}</span></li>
+                    <li><span>Tax</span><span>{{summary.tax}}</span></li>
+                    <li><span>Delievery</span><span>{{summary.delievery}}</span></li>
+                    <li><span>Discount</span><span>{{summary.discount}}</span></li>
+                    <li><h4>Total</h4><h4>{{summary.total}}</h4></li>
+                    <button class="btn btn-success btn-block" style="width: 100%;">CHECKOUT</button>
+                  </ul>
+                </div>
+        </div>
+    </div>
+    <div class="row text-center pt-5" *ngIf="!cartDetails">
+        <div class="col">
+            <h1>Oops Cart is Empty !!!</h1>
+        </div>
+    </div>
+</div>

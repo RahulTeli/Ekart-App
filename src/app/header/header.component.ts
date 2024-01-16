@@ -40,6 +40,7 @@ ngOnInit(){    // checking on which route we are and setting header according to
           let data = localStorage.getItem('user');
           let userdata = data && JSON.parse(data)[0];
           this.userName = userdata.Name;
+          this.serviceproduct.GetCartListAfterLogin(userdata.id);
         }
 
       }
@@ -109,6 +110,7 @@ sellerlogout()
 userlogout(){
   localStorage.removeItem('user');
     this.route.navigate(['/']);
+    this.serviceproduct.cartdata.emit([])
 }
 
 }

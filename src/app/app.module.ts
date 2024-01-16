@@ -16,7 +16,9 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './search/search.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
-import { UserAuthComponent } from './user-auth/user-auth.component'
+import { UserAuthComponent } from './user-auth/user-auth.component';
+import { CartpageComponent } from './cartpage/cartpage.component';
+import { CheckoutComponent } from './checkout/checkout.component'
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { UserAuthComponent } from './user-auth/user-auth.component'
     SellerUpdateProductComponent,
     SearchComponent,
     ProductdetailsComponent,
-    UserAuthComponent
+    UserAuthComponent,
+    CartpageComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
