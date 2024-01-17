@@ -18,7 +18,7 @@
                         <td class="fs-6">{{item.productname}}</td>
                         <td class="fs-6">{{item.productprice}}</td>
                         <td class="fs-6">{{item.quantity}}</td>
-                        <td class="fs-6"><button class="btn btn-sm btn-danger">Remove</button></td>
+                        <td class="fs-6"><button class="btn btn-sm btn-danger" (click)="RemoveToCart(item.id)">Remove</button></td>
                       </tr>
                     </tbody>
                   </table>

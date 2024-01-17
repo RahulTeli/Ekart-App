@@ -21,19 +21,15 @@
       <div class="row  mt-5 " *ngIf="productList">
         <h1 class="text-center"> Trendy Products </h1>
 
-        <div class="col-md-3" *ngFor="let product of productList">
+        <div class="col-md-3" *ngFor="let product of productList" routerLink="/product/{{product.id}}">
 
           <div class="card mt-3 shadow-effect">
-            <img src="{{product.productimage}}" class="card-img-top" alt="...">
+            <img src="{{product.productimage}}" class="card-img-top" alt="product images">
         
             <div class="card-body border-top text-center">
               <h5 class="card-title ">{{product.productname}}</h5>
               <p class="card-text ">Price : {{product.productprice}}<br> Color : {{product.productcolor}}</p>
              
-            </div>
-            <div class="card-body border-top d-flex justify-content-evenly">
-                  <a routerLink="/product/{{product.id}}" class="link" >View Details</a>
-                  <a href="" class="link">Add to Cart</a>
             </div>
           </div>
 

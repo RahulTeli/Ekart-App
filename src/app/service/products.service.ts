@@ -126,4 +126,26 @@ export class ProductsService {
       return this.client.post<Order>('http://localhost:3000/order',orderdata);
     }
 
+    // gettting order data from db for my order page
+    GetOrderDetails(){
+      let user  = localStorage.getItem('user');
+      let userid = user && JSON.parse(user)[0].id;
+      return this.client.get<Order[]>('http://localhost:3000/order?userid='+userid);
+    }
+
+    // removing all cart element after order placed
+    EmptyCartAfterCheckout(cid:number){
+      this.client.delete<Cart>(`http://localhost:3000/cart/${cid}`,{observe:'response'}).subscribe((response)=>{
+      if(response){
+        this.cartdata.emit([]);
+      } 
+      })
+
+    }
+
+    // cancel order operation
+    CancelOrder(oid:number){
+      return this.client.delete<Order>('http://localhost:3000/order/'+oid);
+    }
+
 }

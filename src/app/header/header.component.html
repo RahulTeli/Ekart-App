@@ -27,8 +27,8 @@
             <li><a  class="link text-info ">{{Name | titlecase}}</a></li>
         </ul>
         <ul *ngSwitchCase="'user'">
-            <li><a  class="link"  routerLink="">fswet</a></li>
-            <li><a  class="link" routerLink="">jkhsaddfjkhjsad</a></li>
+            <li><a  class="link"  routerLink="">Home</a></li>
+            <li><a  class="link" routerLink="/my-order">My Orders</a></li>
             <li><a  class="link" routerLink="/cartsummary">Cart({{cartValue}})</a></li>
             <li><a (click)="userlogout()" class="link text-danger">Logout</a></li>
             <li><a  class="link text-info ">{{userName | titlecase}}</a></li>

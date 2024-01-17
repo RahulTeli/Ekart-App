@@ -4,6 +4,9 @@
     width: 100%;
     cursor: pointer;
 }
+.card{
+    cursor: pointer;
+}
 .carousel-caption{
     background-color: #00000082;
     border-radius: 7px;

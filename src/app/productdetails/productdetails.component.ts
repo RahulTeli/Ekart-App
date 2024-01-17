@@ -121,7 +121,7 @@ export class ProductdetailsComponent {
         closeButton: true,
       });
     } else {                                      /////// if user is logged in
-      console.log(this.cartdataforremovecart);
+
       let user = localStorage.getItem('user');
       let userid = user && JSON.parse(user)[0].id;
 

@@ -18,7 +18,8 @@ import { SearchComponent } from './search/search.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CartpageComponent } from './cartpage/cartpage.component';
-import { CheckoutComponent } from './checkout/checkout.component'
+import { CheckoutComponent } from './checkout/checkout.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component'
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { CheckoutComponent } from './checkout/checkout.component'
     ProductdetailsComponent,
     UserAuthComponent,
     CartpageComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    MyOrdersComponent
   ],
   imports: [
     BrowserModule,

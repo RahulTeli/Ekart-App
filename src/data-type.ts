@@ -57,5 +57,6 @@ export interface Order{
     mobille:number,
     payment:string,
     amount:number,
-    userid:number
+    userid:number,
+    id:number|undefined
 }

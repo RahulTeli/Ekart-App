@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Order, Summary } from 'src/data-type';
+import { Cart, Order, Summary } from 'src/data-type';
 import { ProductsService } from '../service/products.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -17,6 +17,7 @@ export class CheckoutComponent {
   name:string=''
   email:string=''
  total:number=0;
+ cartdata:Cart[]|undefined;
 
   
   ngOnInit(){
@@ -28,6 +29,7 @@ export class CheckoutComponent {
 
     this.serviceproduct.GetCartSummary().subscribe((response)=>{
       if(response && response.length!==0){
+        this.cartdata = response;
         let price = 0;
         response.forEach((item)=>{
             price = price + (+item.productprice * + item.quantity);  // converting to number 
@@ -55,14 +57,21 @@ export class CheckoutComponent {
       let order :Order= {
         ...data,
         amount:this.total,
-        userid
+        userid,
+        id:undefined
       }
+
+      this.cartdata?.forEach((item)=>{
+        setTimeout(() => {
+            item.id && this.serviceproduct.EmptyCartAfterCheckout(item.id);
+        }, 700);
+      })
     
       this.serviceproduct.OrderNow(order).subscribe((response)=>{
         if(response){
          
             this.toast.success('Order Placed','Yahhoooo!!',{progressBar:true,closeButton:true})
-            this.route.navigate(['']);
+            this.route.navigate(['/my-order']);
           
         }
       })

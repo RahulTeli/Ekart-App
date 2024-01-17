@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductsService } from '../service/products.service';
 import { Cart, Summary } from 'src/data-type';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cartpage',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./cartpage.component.css']
 })
 export class CartpageComponent {
-constructor(private serviceproduct:ProductsService,private route:Router){}
+constructor(private serviceproduct:ProductsService,private route:Router,private toast:ToastrService){}
 cartDetails:Cart[]|undefined;
 summary :Summary = {
   price:0,
@@ -20,7 +21,11 @@ summary :Summary = {
 }
 
 ngOnInit(){
+this.LoadSummary();
+}
 
+
+LoadSummary(){
   this.serviceproduct.GetCartSummary().subscribe((response)=>{
     if(response && response.length!==0){
       console.log(response)
@@ -43,13 +48,33 @@ ngOnInit(){
     }
 
   })
-
-
 }
+
 
 
 checkout(){
 this.route.navigate(['/checkout'])
+}
+
+RemoveToCart(cid:number|undefined){
+  let user = localStorage.getItem('user');
+  let userid = user && JSON.parse(user)[0].id;
+
+  cid &&
+    this.serviceproduct
+      .RemoveItemFromCartAfterLogin(cid)
+      .subscribe((response) => {
+        if(response){
+          this.serviceproduct.GetCartListAfterLogin(userid);
+          this.LoadSummary();
+          this.toast.info('Item Removed from Cart', 'Cart', {
+            progressBar: true,
+            closeButton: true,
+          });
+          
+        }
+      });
+
 }
 
 }

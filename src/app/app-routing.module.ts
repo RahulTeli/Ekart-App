@@ -11,6 +11,7 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CartpageComponent } from './cartpage/cartpage.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'product/:productid',component:ProductdetailsComponent},
   {path:'user-auth',component:UserAuthComponent},
   {path:'cartsummary',component:CartpageComponent},
-  {path:'checkout',component:CheckoutComponent}
+  {path:'checkout',component:CheckoutComponent},
+  {path:'my-order',component:MyOrdersComponent}
 ];
 
 @NgModule({
